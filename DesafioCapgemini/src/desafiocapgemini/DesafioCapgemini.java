@@ -23,9 +23,10 @@ public class DesafioCapgemini {
             posicaoNumero = ((entradaNumerica.size() - 1)/2);
             resultado = entradaNumerica.get(posicaoNumero);
         }else{
-
+            posicaoNumero = ((entradaNumerica.size())/2);
+            resultado = ((entradaNumerica.get(posicaoNumero))+(entradaNumerica.get(posicaoNumero-1)))/2;
         }
-        System.out.print("a mediana da string é: " + resultado);
+        System.out.print("a mediana da string é: " + resultado + "  ");
     }
     
 }
