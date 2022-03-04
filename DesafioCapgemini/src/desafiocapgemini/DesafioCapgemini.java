@@ -17,7 +17,15 @@ public class DesafioCapgemini {
             entradaNumerica.add(lista);
             i++;
         }
-        
+        float resultado = 0.0f;
+        int posicaoNumero;
+        if (entradaNumerica.size() %2 !=0) {
+            posicaoNumero = ((entradaNumerica.size() - 1)/2);
+            resultado = entradaNumerica.get(posicaoNumero);
+        }else{
+
+        }
+        System.out.print("a mediana da string é: " + resultado);
     }
     
 }
