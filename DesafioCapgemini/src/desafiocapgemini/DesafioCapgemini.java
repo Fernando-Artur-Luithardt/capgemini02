@@ -28,13 +28,46 @@ public class DesafioCapgemini {
             System.out.print("\nA MEDIANA DA STRING É: " + resultado + "\n\n");
             main(null);
     }
-
+    static void desafio02() {
+        System.out.print("ENTRE COM O NÚMERO DE CASAS A DO VETOR: ");
+        Scanner input = new Scanner(System.in);
+        int casasVetor = input.nextInt();
+        ArrayList<Float> vetor = new ArrayList<>();
+        int i = 1;
+        while (i <= casasVetor) {
+                System.out.print("ENTRE COM O " + i + "° NÚMERO: ");
+                float lista= input.nextInt();
+                vetor.add(lista);
+                i++;
+            }
+        System.out.print("\nENTRE COM 'X' (diferença entre as casas do vetor): ");
+        int x = input.nextInt();
+        i = 0;
+        int y = 0;
+        float resultado = 0.0f;
+        while(i < vetor.size()) {
+            y = i;
+            while(y < (vetor.size()-1)) {
+                if ((vetor.get(i) - x) == vetor.get(y+1)){
+                resultado++;                
+                }else if ((vetor.get(i) + x) == vetor.get(y+1)){
+                resultado++;
+                }
+            y++;
+            }
+            i++;
+        }
+        System.out.print("RESULTADO:"+resultado);
+        resultado = 0;
+        
+    }
     public static void main(String[] args) {
         System.out.print("ESCOLHA ENTRE: \n [1] DESAFIO 01\n [2] DESAFIO 02\n [3] DESAFIO 03\n [4] SAIR  \n");
         Scanner input = new Scanner(System.in);
         int escolha = input.nextInt();
         switch (escolha){
             case 1: desafio01();
+            case 2: desafio02();
                 
             case 4: break;
             default: main(null);
