@@ -57,19 +57,39 @@ public class DesafioCapgemini {
             }
             i++;
         }
-        System.out.print("RESULTADO:"+resultado);
+        System.out.print("RESULTADO:"+resultado+"\n");
+        main(null);
         
     }
     static void desafio03() {
         System.out.print("ENTRE COM UMA FRASE PARA SER DECODIFICADA:\n");
         Scanner input = new Scanner(System.in);
-        String string = input.nextLine();
-        string = string.replaceAll(" ", "");
-        int length = string.length();
-        var raiz = Math.round(Math.sqrt(length));
-        System.out.print(raiz);
-        
-        
+        var entrada = input.nextLine();
+        entrada = entrada.replaceAll(" ", "");
+        int length = entrada.length();
+        float raiz = Math.round(Math.sqrt(length));
+        int i = 0;
+        int j = 0;
+        int linhas = 0;
+        if (length % raiz !=0) {
+            linhas = (int) raiz +1;
+        } else {linhas = (int) raiz;}
+        while (i < linhas){
+            while(j <= linhas){               
+                int caracter = (int) (j * raiz) + i;
+                    if (caracter <= (entrada.length()-1)){
+                        System.out.print(entrada.charAt(caracter));
+                    } else{
+                        break;
+                    }
+                j++;
+            }
+            j = 0;
+            System.out.print(" ");        
+            i++;
+        }
+        System.out.print("\n");
+        main(null);
     }
     public static void main(String[] args) {
         System.out.print("ESCOLHA ENTRE: \n [1] DESAFIO 01\n [2] DESAFIO 02\n [3] DESAFIO 03\n [4] SAIR  \n");
