@@ -58,7 +58,17 @@ public class DesafioCapgemini {
             i++;
         }
         System.out.print("RESULTADO:"+resultado);
-        resultado = 0;
+        
+    }
+    static void desafio03() {
+        System.out.print("ENTRE COM UMA FRASE PARA SER DECODIFICADA:\n");
+        Scanner input = new Scanner(System.in);
+        String string = input.nextLine();
+        string = string.replaceAll(" ", "");
+        int length = string.length();
+        var raiz = Math.round(Math.sqrt(length));
+        System.out.print(raiz);
+        
         
     }
     public static void main(String[] args) {
@@ -68,7 +78,7 @@ public class DesafioCapgemini {
         switch (escolha){
             case 1: desafio01();
             case 2: desafio02();
-                
+            case 3: desafio03();    
             case 4: break;
             default: main(null);
         }
