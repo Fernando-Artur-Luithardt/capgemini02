@@ -25,7 +25,8 @@ public class DesafioCapgemini {
                 posicaoNumero = ((entradaNumerica.size())/2);
                 resultado = ((entradaNumerica.get(posicaoNumero))+(entradaNumerica.get(posicaoNumero-1)))/2;
             }
-            System.out.print("\nA MEDIANA DA STRING É: " + resultado + "\n\n");
+            System.out.print("\nSTRING: "+entradaNumerica + "\n");
+            System.out.print("A MEDIANA DA STRING É: " + resultado + "\n\n");
             main(null);
     }
     static void desafio02() {
@@ -57,6 +58,7 @@ public class DesafioCapgemini {
             }
             i++;
         }
+        System.out.print("\nSTRING: "+ vetor + "\n");
         System.out.print("RESULTADO:"+resultado+"\n");
         main(null);
         
@@ -71,12 +73,15 @@ public class DesafioCapgemini {
         int i = 0;
         int j = 0;
         int linhas = 0;
+        
+        System.out.print("\n RESPOSTA: ");
         if (length % raiz !=0) {
             linhas = (int) raiz +1;
         } else {linhas = (int) raiz;}
+        int caracter = 0;
         while (i < linhas){
             while(j <= linhas){               
-                int caracter = (int) (j * raiz) + i;
+                    caracter = (int) (j * raiz) + i;
                     if (caracter <= (entrada.length()-1)){
                         System.out.print(entrada.charAt(caracter));
                     } else{
@@ -88,7 +93,7 @@ public class DesafioCapgemini {
             System.out.print(" ");        
             i++;
         }
-        System.out.print("\n");
+        System.out.print("\n\n");
         main(null);
     }
     public static void main(String[] args) {
@@ -99,7 +104,7 @@ public class DesafioCapgemini {
             case 1: desafio01();
             case 2: desafio02();
             case 3: desafio03();    
-            case 4: break;
+            case 4: System.exit(0);
             default: main(null);
         }
                        
