@@ -4,7 +4,19 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class DesafioCapgemini {
-    static void desafio01() {
+    static void selecione() {
+        System.out.print("ESCOLHA ENTRE: \n [1] QUESTÃO 01\n [2] QUESTÃO 02\n [3] QUESTÃO 03\n [4] SAIR  \n");
+        Scanner input = new Scanner(System.in);
+        int escolha = input.nextInt();
+        switch (escolha){
+            case 1: questao01();
+            case 2: questao02();
+            case 3: questao03();    
+            case 4: System.exit(0);
+            default: selecione();
+        }
+    }
+    static void questao01() {
         System.out.print("ENTRE COM O NÚMERO DE CASAS A SEREM ANALISADAS: ");
             Scanner input = new Scanner(System.in);
             int casasString= input.nextInt();
@@ -28,9 +40,9 @@ public class DesafioCapgemini {
             }
             System.out.print("\nSTRING: "+entradaNumerica + "\n");
             System.out.print("A MEDIANA DA STRING É: " + resultado + "\n\n");
-            main(null);
+            selecione();
     }
-    static void desafio02() {
+    static void questao02() {
         System.out.print("ENTRE COM O NÚMERO DE CASAS A DO VETOR: ");
         Scanner input = new Scanner(System.in);
         int casasVetor = input.nextInt();
@@ -61,11 +73,11 @@ public class DesafioCapgemini {
             i++;
         }
         System.out.print("\nSTRING: "+ vetor + "\n");
-        System.out.print("RESULTADO:"+resultado+"\n");
-        main(null);
+        System.out.print("RESULTADO: "+resultado+"DIFERENÇA(S) ENCONTRADAS\n");
+        selecione();
         
     }
-    static void desafio03() {
+    static void questao03() {
         System.out.print("ENTRE COM UMA FRASE PARA SER DECODIFICADA:\n");
         Scanner input = new Scanner(System.in);
         var entrada = input.nextLine();
@@ -99,19 +111,9 @@ public class DesafioCapgemini {
             i++;
         }
         System.out.print("\n\n");
-        main(null);
+        selecione();
     }
     public static void main(String[] args) {
-        System.out.print("ESCOLHA ENTRE: \n [1] DESAFIO 01\n [2] DESAFIO 02\n [3] DESAFIO 03\n [4] SAIR  \n");
-        Scanner input = new Scanner(System.in);
-        int escolha = input.nextInt();
-        switch (escolha){
-            case 1: desafio01();
-            case 2: desafio02();
-            case 3: desafio03();    
-            case 4: System.exit(0);
-            default: main(null);
-        }
-                       
+        selecione();                  
     }        
 }
